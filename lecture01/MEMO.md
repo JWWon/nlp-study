@@ -102,3 +102,62 @@
 ​	3) 평소보다 두 배로 많이 먹어서 배가 아프다.
 
 위의 문장들에서 "배"는 모두 다른 의미를 갖고있다. 음소 표기법은 앞 뒤 문맥을 보고 단어의 의미를 식별하는 것이다.
+
+
+
+## BOW 모델
+
+다음의 두 문장이 있다고 가정.
+
+​	1)  John likes to watch movies. Mary likes movies too.
+
+​	2) John also likes to watch football games.
+
+ 위 두 문장을 토큰화하면 다음과 같이 나온다.
+
+```
+[
+    "John",
+    "likes",
+    "to",
+    "watch",
+    "movies",
+    "Mary",
+    "too",
+    "also",
+    "football",
+    "games"
+]
+```
+
+그리고, 배열의 순서대로 각 토큰이 몇 번 등장하는지 횟수를 세어준다.
+
+​	1) [1, 2, 1, 1, 2, 1, 1, 0, 0, 0]
+
+​	2) [1, 1, 1, 1, 0, 0, 0, 1, 1, 1]
+
+> 머신러닝 알고리즘이 이해할 수 있는 형태로 바꿔주는 작업
+
+단어 가방을 n-gram을 사용해 bigram으로 담아주면 다음과 같이 나온다. (* trigram: 3개씩 묶음)
+
+```
+[
+    "John likes",
+    "likes to",
+    "to watch",
+    "watch movies",
+    "Mary likes",
+    "likes movies",
+    "movies too"
+]
+```
+
+> CountVectorizer를 통해 위 작업을 실행
+
+#### Scikit-learn의 CountVertorizer를 통해 feature 생성
+
+* 정규표현식을 사용해 토큰을 추출
+* 모두 소문자로 변환 => good, Good, goOD 등이 모두 같은 특성이 됨
+* 의미없는 특성을 많이 생성하기 때문에 적어도 두 개의 문서에 나타난 토큰만을 사용
+* min_df로 토큰이 나타날 최소 문서 개수를 지정할 수 있음
+
