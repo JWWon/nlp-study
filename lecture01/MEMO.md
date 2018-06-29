@@ -41,3 +41,6 @@
   * `it's bad, not goot at all.`
   * `it's good, not bad at all.`
 * 이를 보완하기 위해 n-gram을 사용하는 데, BOW는 하나의 토큰을 사용하지만 n-gram은 n개의 토큰을 사용할 수 있도록 한다.
+
+
+
