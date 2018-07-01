@@ -3,3 +3,4 @@
 - 소마 자기주도 학습
 - [학습 사이트 - 인프런](https://www.inflearn.com/course-status-2/)
 - [사용 데이터 - 캐글](https://www.kaggle.com/c/word2vec-nlp-tutorial/data)
+- [프로젝트 소스코드](https://github.com/corazzon/KaggleStruggle/tree/master/word2vec-nlp-tutorial)
